@@ -8,6 +8,7 @@ zh-CN:
         title: 标题
         description: 介绍
         created_at: 创建时间
+        cover: 封面
   helpers:
     actions: 操作
     titles:
@@ -19,6 +20,7 @@ zh-CN:
       cancel: 取消
       back: 返回
       destroy: 删除
+      browse: 浏览
     submit:
       create: "创建%{model}"
       update: "修改%{model}"

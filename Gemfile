@@ -48,3 +48,6 @@ end
 gem 'therubyracer', platforms: :ruby
 gem 'less-rails'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
+
+# Paperclip for uploading
+gem 'paperclip'

@@ -3,12 +3,13 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @album.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @album.description %></dd>
-</dl>
+<div class="media">
+  <img class="pull-left media-object" src="<%= @album.cover.url(:thumb) %>">
+  <div class="media-body">
+    <h4 class="media-heading"><%= @album.title %></h4>
+    <span><%= @album.description %></span>
+  </div>
+</div>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               albums_path, :class => 'btn btn-default'  %>
