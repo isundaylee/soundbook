@@ -1,0 +1,24 @@
+zh-CN:
+  activerecord:
+    models:
+      album: 专辑
+    attributes:
+      album:
+        id: 编号
+        title: 标题
+        description: 介绍
+        created_at: 创建时间
+  helpers:
+    actions: 操作
+    titles:
+      new: 新建%{model}
+      edit: 修改%{model}
+    links:
+      new: 新建
+      edit: 编辑
+      cancel: 取消
+      back: 返回
+      destroy: 删除
+    submit:
+      create: "创建%{model}"
+      update: "修改%{model}"
