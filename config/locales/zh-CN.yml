@@ -16,6 +16,7 @@ zh-CN:
         album_id: 专辑
         created_at: 创建时间
         description: 介绍
+        song: 歌曲
   helpers:
     actions: 操作
     titles:
