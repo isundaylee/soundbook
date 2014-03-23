@@ -51,3 +51,6 @@ gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branc
 
 # Paperclip for uploading
 gem 'paperclip'
+
+# i18n
+gem 'rails-i18n'

@@ -1,4 +1,6 @@
 Soundbook::Application.routes.draw do
+  resources :songs
+
   resources :albums
 
   # The priority is based upon order of creation: first created -> highest priority.
