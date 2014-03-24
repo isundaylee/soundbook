@@ -10,10 +10,10 @@ init_player_index = ->
   # Center albums
   center_albums = ->
     albums_div = $('#albums')
-    albums_div.css('top', ($(window).height() - albums_div.height()) / 2)
-    albums_div.css('left', ($(window).width() - albums_div.width()) / 2)
+    albums_div.css('top', ($(window).height() - albums_div.outerHeight()) / 2)
+    albums_div.css('left', ($(window).width() - albums_div.outerWidth()) / 2)
   center_panels = ->
-    $('.album-songlist').css('margin-left', ($(window).width() - $('.album-songlist').width() - $('#player').width()) / 2)
+    $('.album-songlist').css('margin-left', ($(window).width() - $('.album-songlist').outerWidth() - $('#player').outerWidth()) / 2)
     $('#description').css('height', $(window).height() - 220)
 
   # Initialiazing player
