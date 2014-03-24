@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <title>Sunday's Soundbook</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="index">
+  <div id="albums">
+    <% for album in Album.all.reverse %>
+      <div class="album-entry">
+        <a href="javascript: show_album_songlist(<%= album.id %>)"><img src="<%= album.cover.url %>"></a></a>
+        <a href="javascript: show_album_songlist(<%= album.id %>)"><h2><%= album.title %></h2></a>
+      </div>
+    <% end %>
+  </div>
+  <div id="albums-songlist">
+    <% for album in Album.all %>
+      <div class="album-songlist" id="album-songlist-<%= album.id %>">
+        <div class="album-header">
+          <img src="<%= album.cover.url %>">
+          <h2><%= album.title %></h2>
+          <span><%= album.description %></span>
+        </div>
+        <div class="album-songs">
+          <% for song in album.songs %>
+            <div class="song">
+              <a href="javascript: play_song(<%= song.id %>); "><img src="<%= asset_path('play.png') %>"></a>
+              <a href="javascript: play_song(<%= song.id %>); "><h3><%= song.title %></h3></a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div id="player">
+    </div>
+  </div>
+</body>
+</html>

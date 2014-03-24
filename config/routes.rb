@@ -1,4 +1,5 @@
 Soundbook::Application.routes.draw do
+  root 'player#index'
   resources :songs
 
   resources :albums
