@@ -25,7 +25,7 @@
           <span><%= album.description %></span>
         </div>
         <div class="album-songs">
-          <% for song in album.songs %>
+          <% for song in album.songs.reverse %>
             <div class="song">
               <a href="javascript: play_song(<%= song.id %>); "><img src="<%= asset_path('play.png') %>"></a>
               <a href="<%= song_path(song.id, format: :mp3) %>"><img src="<%= asset_path('download.png') %>"></a>
