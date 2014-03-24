@@ -97,6 +97,40 @@ body#index {
       height: 100%;
       margin: 0;
       background-color: rgba(0, 0, 0, 0.6);
+
+      #controls {
+        padding: 50px 0;
+
+        img {
+          width: 20px;
+          height: 20px;
+          margin: 10px;
+          margin-bottom: 20px;
+        }
+
+        span {
+          line-height: 20px;
+          color: white;
+          font-size: 16px;
+        }
+
+        #time {
+          margin-left: 10px;
+          display: inline-block;
+        }
+
+        #progress_border {
+          width: 360px;
+          height: 20px;
+          border: 1px solid white;
+
+          #progress {
+            width: 40%;
+            height: 100%;
+            background-color: white;
+          }
+        }
+      }
     }
   }
 }
