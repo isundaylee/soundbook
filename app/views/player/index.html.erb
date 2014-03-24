@@ -28,6 +28,7 @@
           <% for song in album.songs %>
             <div class="song">
               <a href="javascript: play_song(<%= song.id %>); "><img src="<%= asset_path('play.png') %>"></a>
+              <a href="<%= song_path(song.id, format: :mp3) %>"><img src="<%= asset_path('download.png') %>"></a>
               <a href="javascript: play_song(<%= song.id %>); "><h3><%= song.title %></h3></a>
             </div>
           <% end %>

@@ -9,7 +9,15 @@ class SongsController < ApplicationController
 
   # GET /songs/1
   # GET /songs/1.json
+  # GET /songs/1.mp3
   def show
+    song = Song.find(params[:id])
+
+    respond_to do |format|
+      format.mp3 { send_file song.song.path, filename: "李嘉浩 - #{song.album.title} - #{song.title}.mp3" }
+      format.html
+      format.json
+    end
   end
 
   # GET /songs/new
