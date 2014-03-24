@@ -5,6 +5,8 @@
 root = exports ? this
 
 init_player_index = ->
+  if ($(window).width() < 1000)
+    alert('将浏览器窗口宽度调至 1000 像素或更高才会看得到最好的效果哦\nBest viewed at width of 1000 pixels or more! ')
   # Center albums
   center_albums = ->
     albums_div = $('#albums')
