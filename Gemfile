@@ -55,3 +55,6 @@ gem 'paperclip'
 
 # i18n
 gem 'rails-i18n'
+
+# Javascript Rails routes
+gem 'js-routes'

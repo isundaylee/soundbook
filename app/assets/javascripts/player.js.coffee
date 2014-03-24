@@ -12,13 +12,11 @@ init_player_index = ->
     albums_div.css('left', ($(window).width() - albums_div.width()) / 2)
   center_panels = ->
     $('.album-songlist').css('margin-left', ($(window).width() - $('.album-songlist').width() - $('#player').width()) / 2)
+    $('#description').css('height', $(window).height() - 220)
 
   # Initialiazing player
   $('#jplayer').jPlayer({
     ready: ->
-      $(this).jPlayer("setMedia", {
-        mp3: 'http://localhost:3000/system/songs/songs/000/000/001/original/03_Thank_You.mp3?1395612499'
-      })
     supplied: 'mp3',
     cssSelectorAncestor: '',
     cssSelector: {
@@ -66,7 +64,21 @@ init_player_index = ->
     $('.album-songlist').hide()
 
   root.play_song = (id) ->
-    alert('Should be playing song ' + id)
+    path = Routes.song_path(id, {format: 'json'})
+    $.get(path, (data) ->
+      nl2br = (str, is_xhtml) ->
+        breakTag = '<br>'
+        (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+
+      url = data['song']
+      desc = data['description']
+
+      if !desc
+        desc = '该歌曲无介绍显示'
+
+      $('#jplayer').jPlayer('setMedia', {mp3: url}).jPlayer('play')
+      $('#description').html(nl2br(desc))
+    )
 
   null_clicking = (event) ->
     event.stopPropagation()
@@ -78,5 +90,4 @@ init_player_index = ->
 $(document).ready ->
   if $('body#index').size() > 0
     init_player_index()
-    show_album_songlist(1)
 
