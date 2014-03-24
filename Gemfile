@@ -58,3 +58,9 @@ gem 'rails-i18n'
 
 # Javascript Rails routes
 gem 'js-routes'
+
+# Deployment
+gem 'capistrano', '~> 3.0.1'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+gem 'capistrano-rails', '~> 1.1.0'
