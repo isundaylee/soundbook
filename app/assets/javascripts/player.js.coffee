@@ -18,11 +18,11 @@ init_player_index = ->
     albums_div.css('left', ($(window).width() - albums_div.outerWidth()) / 2)
   center_panels = ->
     if is_small_screen()
-      $('#player_alt').show()
+      $('.player_alt').show()
       $('#player').hide()
       $('.album-songlist').css('margin-left', ($(window).width() - $('.album-songlist').outerWidth()) / 2)
     else
-      $('#player_alt').hide()
+      $('.player_alt').hide()
       $('#player').show()
       $('.album-songlist').css('margin-left', ($(window).width() - $('.album-songlist').outerWidth() - $('#player').outerWidth()) / 2)
       $('#description').css('height', $(window).height() - 220)
@@ -49,10 +49,10 @@ init_player_index = ->
       else
         ratio = 100 * current / duration
 
-      $('#progress, #progress_alt').css('width', parseInt(ratio) + '%')
+      $('#progress, .progress_alt').css('width', parseInt(ratio) + '%')
   })
 
-  $('#progress_border, #progress_border_alt').click (e) ->
+  $('#progress_border, .progress_border_alt').click (e) ->
     pos = e.pageX - $(this).offset().left
     ratio = 100.0 * pos / $(this).width()
 

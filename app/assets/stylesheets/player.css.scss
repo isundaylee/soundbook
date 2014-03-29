@@ -105,12 +105,12 @@ body#index {
       background-color: rgba(0, 0, 0, 0.6);
     }
 
-    #player_alt {
+    .player_alt {
       width: 540px;
     }
 
 
-    #player, #player_alt {
+    #player, .player_alt {
       padding: 50px 50px 0 0;
 
       #controls {
@@ -134,12 +134,12 @@ body#index {
           display: inline-block;
         }
 
-        #progress_border, #progress_border_alt {
+        #progress_border, .progress_border_alt {
           width: 100%;
           height: 20px;
           border: 1px solid white;
 
-          #progress, #progress_alt {
+          #progress, .progress_alt {
             width: 0%;
             height: 100%;
             background-color: white;

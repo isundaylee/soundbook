@@ -24,8 +24,7 @@
           <h2><%= album.title %></h2>
           <span><%= album.description %></span>
         </div>
-        <div id="player_alt">
-          <div id="jplayer"></div>
+        <div class="player_alt">
           <div id="controls">
             <img src="<%= asset_path('play.png') %>" id="play">
             <img src="<%= asset_path('pause.png') %>" id="pause">
@@ -35,8 +34,8 @@
               /
               <span id="duration">0:00</span>
             </div>
-            <div id="progress_border_alt">
-              <div id="progress_alt"></div>
+            <div class="progress_border_alt">
+              <div class="progress_alt"></div>
             </div>
           </div>
         </div>
