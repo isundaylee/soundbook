@@ -5,16 +5,27 @@
 root = exports ? this
 
 init_player_index = ->
-  if ($(window).width() < 1000)
+  is_small_screen = ->
+    return ($(window).width() < 1000)
+
+  if is_small_screen()
     alert('将浏览器窗口宽度调至 1000 像素或更高才会看得到最好的效果哦\nBest viewed at width of 1000 pixels or more! ')
+
   # Center albums
   center_albums = ->
     albums_div = $('#albums')
     albums_div.css('top', ($(window).height() - albums_div.outerHeight()) / 2)
     albums_div.css('left', ($(window).width() - albums_div.outerWidth()) / 2)
   center_panels = ->
-    $('.album-songlist').css('margin-left', ($(window).width() - $('.album-songlist').outerWidth() - $('#player').outerWidth()) / 2)
-    $('#description').css('height', $(window).height() - 220)
+    if is_small_screen()
+      $('#player_alt').show()
+      $('#player').hide()
+      $('.album-songlist').css('margin-left', ($(window).width() - $('.album-songlist').outerWidth()) / 2)
+    else
+      $('#player_alt').hide()
+      $('#player').show()
+      $('.album-songlist').css('margin-left', ($(window).width() - $('.album-songlist').outerWidth() - $('#player').outerWidth()) / 2)
+      $('#description').css('height', $(window).height() - 220)
 
   # Initialiazing player
   $('#jplayer').jPlayer({
@@ -38,10 +49,10 @@ init_player_index = ->
       else
         ratio = 100 * current / duration
 
-      $('#progress').css('width', parseInt(ratio) + '%')
+      $('#progress, #progress_alt').css('width', parseInt(ratio) + '%')
   })
 
-  $('#progress_border').click (e) ->
+  $('#progress_border, #progress_border_alt').click (e) ->
     pos = e.pageX - $(this).offset().left
     ratio = 100.0 * pos / $(this).width()
 
@@ -52,6 +63,7 @@ init_player_index = ->
 
     $('#jplayer').jPlayer('playHead', parseInt(ratio))
 
+  # Arrange panels
   center_albums()
   center_panels()
   $(window).resize center_albums

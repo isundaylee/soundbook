@@ -24,6 +24,22 @@
           <h2><%= album.title %></h2>
           <span><%= album.description %></span>
         </div>
+        <div id="player_alt">
+          <div id="jplayer"></div>
+          <div id="controls">
+            <img src="<%= asset_path('play.png') %>" id="play">
+            <img src="<%= asset_path('pause.png') %>" id="pause">
+            <img src="<%= asset_path('stop.png') %>" id="stop">
+            <div id="time">
+              <span id="currentTime">0:00</span>
+              /
+              <span id="duration">0:00</span>
+            </div>
+            <div id="progress_border_alt">
+              <div id="progress_alt"></div>
+            </div>
+          </div>
+        </div>
         <div class="album-songs">
           <% for song in album.songs.reverse %>
             <div class="song">

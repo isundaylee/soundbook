@@ -103,9 +103,18 @@ body#index {
       height: 100%;
       margin: 0;
       background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    #player_alt {
+      width: 540px;
+    }
+
+
+    #player, #player_alt {
+      padding: 50px 50px 0 0;
 
       #controls {
-        padding: 50px 0;
+        padding: 0;
 
         img {
           width: 20px;
@@ -125,12 +134,12 @@ body#index {
           display: inline-block;
         }
 
-        #progress_border {
-          width: 360px;
+        #progress_border, #progress_border_alt {
+          width: 100%;
           height: 20px;
           border: 1px solid white;
 
-          #progress {
+          #progress, #progress_alt {
             width: 0%;
             height: 100%;
             background-color: white;
@@ -142,6 +151,7 @@ body#index {
         overflow: scroll;
         color: white;
         padding-right: 30px;
+        padding-top: 30px;
       }
     }
   }
