@@ -1,4 +1,5 @@
 class Album < ActiveRecord::Base
+  scope :visible, -> { where(hidden: false) }
   has_many :songs
 
   has_attached_file :cover, styles: { medium: '300x300>', thumb: '100x100>'}

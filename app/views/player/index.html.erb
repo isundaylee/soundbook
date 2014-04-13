@@ -9,7 +9,7 @@
 </head>
 <body id="index">
   <div id="albums">
-    <% for album in Album.all.reverse %>
+    <% for album in Album.visible.all.reverse %>
       <div class="album-entry">
         <a href="javascript: show_album_songlist(<%= album.id %>)"><img src="<%= album.cover.url %>"></a></a>
         <a href="javascript: show_album_songlist(<%= album.id %>)"><h2><%= album.title %></h2></a>
@@ -17,7 +17,7 @@
     <% end %>
   </div>
   <div id="albums-songlist">
-    <% for album in Album.all %>
+    <% for album in Album.visible.all %>
       <div class="album-songlist" id="album-songlist-<%= album.id %>">
         <div class="album-header">
           <img src="<%= album.cover.url %>">
