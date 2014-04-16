@@ -66,3 +66,5 @@ gem 'capistrano-bundler'
 gem 'capistrano-rails', '~> 1.1.0'
 
 gem 'mysql2'
+
+gem 'rails_config'
