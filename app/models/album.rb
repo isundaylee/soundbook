@@ -9,7 +9,7 @@ class Album < ActiveRecord::Base
 
   def cover_url
     if Settings.is_mirror
-      local = File.join(Rails.root, 'public', cover.url.split('?')[0])
+      local = File.join(Rails.root, 'public', URI.decode(cover.url).split('?')[0])
       remote = URI.join(Settings.mirror_src, cover.url)
 
       File.exists?(local) ? cover.url : remote

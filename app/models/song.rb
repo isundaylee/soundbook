@@ -6,7 +6,7 @@ class Song < ActiveRecord::Base
 
   def song_url
     if Settings.is_mirror
-      local = File.join(Rails.root, 'public', song.url.split('?')[0])
+      local = File.join(Rails.root, 'public', URI.decode(song.url).split('?')[0])
       remote = URI.join(Settings.mirror_src, song.url)
 
       File.exists?(local) ? song.url : remote.to_s
