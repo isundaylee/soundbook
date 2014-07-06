@@ -155,4 +155,8 @@ body#index {
       }
     }
   }
+
+  ::-webkit-scrollbar {
+      display: none;
+  }
 }
