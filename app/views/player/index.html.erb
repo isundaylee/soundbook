@@ -69,5 +69,14 @@
       </div>
     </div>
   </div>
+  <script>
+    // play the song denoted by 'reveal' param (if specified)
+    <% if @song %>
+      $(document).ready(function() {
+        show_album_songlist(<%= @album.id %>);
+        play_song(<%= @song.id %>);
+      });
+    <% end %>
+  </script>
 </body>
 </html>
