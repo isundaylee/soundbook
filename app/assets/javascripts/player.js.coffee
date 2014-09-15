@@ -33,11 +33,11 @@ init_player_index = ->
     supplied: 'mp3',
     cssSelectorAncestor: '',
     cssSelector: {
-      play: '#play',
-      pause: '#pause',
-      stop: '#stop',
-      currentTime: "#currentTime",
-      duration: "#duration"
+      play: '.play',
+      pause: '.pause',
+      stop: '.stop',
+      currentTime: ".currentTime",
+      duration: ".duration"
     },
     timeupdate: (event) ->
       duration = event.jPlayer.status.duration
@@ -49,10 +49,10 @@ init_player_index = ->
       else
         ratio = 100 * current / duration
 
-      $('#progress, .progress_alt').css('width', parseInt(ratio) + '%')
+      $('.progress').css('width', parseInt(ratio) + '%')
   })
 
-  $('#progress_border, .progress_border_alt').click (e) ->
+  $('.progress_border').click (e) ->
     pos = e.pageX - $(this).offset().left
     ratio = 100.0 * pos / $(this).width()
 
@@ -70,11 +70,11 @@ init_player_index = ->
   $(window).resize center_panels
 
   root.show_album_songlist = (id) ->
-    $('#albums-songlist').show()
+    $('#album-songlists').show()
     $('#album-songlist-' + id).css('display', 'inline-block');
 
   root.hide_album_songlist = ->
-    $('#albums-songlist').hide()
+    $('#album-songlists').hide()
     $('.album-songlist').hide()
 
   root.play_song = (id) ->
@@ -97,7 +97,7 @@ init_player_index = ->
   null_clicking = (event) ->
     event.stopPropagation()
 
-  $('#albums-songlist').click root.hide_album_songlist
+  $('#album-songlists').click root.hide_album_songlist
   $('.album-songlist').click null_clicking
   $('#player').click null_clicking
 

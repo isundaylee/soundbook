@@ -16,7 +16,8 @@
       </div>
     <% end %>
   </div>
-  <div id="albums-songlist">
+
+  <div id="album-songlists">
     <% for album in Album.visible.all %>
       <div class="album-songlist" id="album-songlist-<%= album.id %>">
         <div class="album-header">
@@ -24,18 +25,18 @@
           <h2><%= album.title %></h2>
           <span><%= album.description %></span>
         </div>
-        <div class="player_alt">
-          <div id="controls">
-            <img src="<%= asset_path('play.png') %>" id="play">
-            <img src="<%= asset_path('pause.png') %>" id="pause">
-            <img src="<%= asset_path('stop.png') %>" id="stop">
-            <div id="time">
-              <span id="currentTime">0:00</span>
+        <div class="player_alt" id="player_alt_<%= album.id %>">
+          <div class="controls">
+            <img src="<%= asset_path('play.png') %>" class="play">
+            <img src="<%= asset_path('pause.png') %>" class="pause">
+            <img src="<%= asset_path('stop.png') %>" class="stop">
+            <div class="time">
+              <span class="currentTime">0:00</span>
               /
-              <span id="duration">0:00</span>
+              <span class="duration">0:00</span>
             </div>
-            <div class="progress_border_alt">
-              <div class="progress_alt"></div>
+            <div class="progress_border">
+              <div class="progress"></div>
             </div>
           </div>
         </div>
@@ -50,25 +51,27 @@
         </div>
       </div>
     <% end %>
+
     <div id="player">
       <div id="jplayer"></div>
-      <div id="controls">
-        <img src="<%= asset_path('play.png') %>" id="play">
-        <img src="<%= asset_path('pause.png') %>" id="pause">
-        <img src="<%= asset_path('stop.png') %>" id="stop">
-        <div id="time">
-          <span id="currentTime">0:00</span>
+      <div class="controls">
+        <img src="<%= asset_path('play.png') %>" class="play">
+        <img src="<%= asset_path('pause.png') %>" class="pause">
+        <img src="<%= asset_path('stop.png') %>" class="stop">
+        <div class="time">
+          <span class="currentTime">0:00</span>
           /
-          <span id="duration">0:00</span>
+          <span class="duration">0:00</span>
         </div>
-        <div id="progress_border">
-          <div id="progress"></div>
+        <div class="progress_border">
+          <div class="progress"></div>
         </div>
       </div>
-      <div id="description">
+      <div class="description">
       </div>
     </div>
   </div>
+
   <script>
     // play the song denoted by 'reveal' param (if specified)
     <% if @song %>
