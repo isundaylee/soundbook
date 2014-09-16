@@ -25,7 +25,7 @@ init_player_index = ->
       $('.player_alt').hide()
       $('#player').show()
       $('.album-songlist').css('margin-left', ($(window).width() - $('.album-songlist').outerWidth() - $('#player').outerWidth()) / 2)
-      $('#description').css('height', $(window).height() - 220)
+      $('.description').css('height', $(window).height() - 220)
 
   # Initialiazing player
   $('#jplayer').jPlayer({
@@ -91,7 +91,7 @@ init_player_index = ->
         desc = '该歌曲无介绍显示'
 
       $('#jplayer').jPlayer('setMedia', {mp3: url}).jPlayer('play')
-      $('#description').html(nl2br(desc))
+      $('.description').html(nl2br(desc))
     )
 
   null_clicking = (event) ->
