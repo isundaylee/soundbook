@@ -9,16 +9,20 @@
 </head>
 <body id="index">
   <div id="albums">
-    <% for album in Album.visible.all.reverse %>
+    <% Album.visible.all.reverse.each_with_index do |album, i| %>
       <div class="album-entry">
         <a href="javascript: show_album_songlist(<%= album.id %>)"><img src="<%= album.cover_url %>"></a></a>
         <a href="javascript: show_album_songlist(<%= album.id %>)"><h2><%= album.title %></h2></a>
       </div>
+
+      <% if i % 3 == 2 %>
+        <br>
+      <% end %>
     <% end %>
   </div>
 
   <div id="album-songlists">
-    <% for album in Album.visible.all %>
+    <% Album.visible.all.each_with_index do |album, i| %>
       <div class="album-songlist" id="album-songlist-<%= album.id %>">
         <div class="album-header">
           <img src="<%= album.cover_url %>">
