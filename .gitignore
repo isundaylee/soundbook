@@ -23,3 +23,11 @@ config/environments/*.local.yml
 config/database.yml
 
 config/settings*
+# added by GitSavvy
+/config/s3.yml
+
+# added by GitSavvy
+/env.sh
+
+# added by GitSavvy
+/lib/tasks/migrate_s3.rake

@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -36,8 +33,8 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-gem 'unicorn'
+# Use thin as the app server
+gem 'thin'
 gem 'foreman'
 
 # Use Capistrano for deployment
@@ -53,6 +50,8 @@ gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branc
 
 # Paperclip for uploading
 gem 'paperclip'
+gem 'aws-sdk'
+gem 'aws-s3'
 
 # i18n
 gem 'rails-i18n'
@@ -67,6 +66,9 @@ gem 'js-routes'
 # gem 'capistrano-rails', '~> 1.1.0'
 gem 'recap'
 
-gem 'mysql2'
+gem 'pg'
 
 gem 'rails_config'
+
+gem 'rails_12factor', group: :production
+
