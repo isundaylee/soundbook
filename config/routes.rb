@@ -2,7 +2,9 @@ Soundbook::Application.routes.draw do
   root 'player#index'
   resources :songs
 
-  resources :albums
+  resources :albums do
+    resources :songs
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

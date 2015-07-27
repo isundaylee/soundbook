@@ -4,7 +4,8 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all
+    album_id = params[:album_id].presence
+    @songs = album_id ? Album.find(album_id).songs : Song.all
   end
 
   # GET /songs/1
